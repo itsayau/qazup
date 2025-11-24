@@ -1,59 +1,75 @@
 /* ============================
-   QAZUP v2 – Қазақи-модерн көк стиль
+   QAZUP – қазақи-модерн көк стиль
    ============================ */
 
-/* FONT */
+/* Шрифт */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
-/* RESET */
+/* Сброс */
 *,
-*:before,
-*:after {
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 /* ============================
-   BACKGROUND + ОЮ-ӨРНЕК
+   ФОН: градиент + қазақи орнамент
    ============================ */
+
 body {
     font-family: 'Nunito', sans-serif;
-    color: #123452;
+    color: #16324F;
 
+    /* 1 — жұмсақ фон, 2 — шаңырақ/қошқармүйіз/домбыра/жебе паттерні */
     background-image:
-        radial-gradient(circle at top, #E8F7FF 0%, #D6F1FF 45%, #CFEAFF 100%),
-        url("data:image/svg+xml;utf8, \
-<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'> \
-<style>.o{stroke:%23005B89;stroke-width:3;fill:none;opacity:0.20;stroke-linecap:round;stroke-linejoin:round}</style> \
-<circle class='o' cx='45' cy='40' r='22'/> \
-<path class='o' d='M27 40c5-7 11-11 18-12'/> \
-<path class='o' d='M63 40c-5 7-11 11-18 12'/> \
-<path class='o' d='M120 35c-9 0-16 7-16 16s7 16 16 16 16-7 16-16c0-5-3-10-6-13'/> \
-<line class='o' x1='35' y1='120' x2='35' y2='78'/> \
-<ellipse class='o' cx='35' cy='132' rx='15' ry='18'/> \
-<line class='o' x1='28' y1='78' x2='42' y2='78'/> \
-<line class='o' x1='110' y1='120' x2='150' y2='120'/> \
-<line class='o' x1='150' y1='120' x2='142' y2='114'/> \
-<line class='o' x1='150' y1='120' x2='142' y2='126'/> \
+        radial-gradient(circle at top, #E8F7FF 0, #D6F1FF 45%, #CFEAFF 100%),
+        url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'>\
+<style>.o{stroke:%23005B89;stroke-width:3;fill:none;opacity:0.22;stroke-linecap:round;stroke-linejoin:round}</style>\
+
+<!-- Шаңырақ -->
+<circle class='o' cx='60' cy='60' r='30'/>\
+<path class='o' d='M38 60c8-10 18-15 28-16'/>\
+<path class='o' d='M82 60c-8 10-18 15-28 16'/>\
+
+<!-- Қошқармүйіз -->
+<path class='o' d='M150 50c-12 0-20 8-20 20s8 20 20 20 20-8 20-20c0-6-3-12-7-15'/>\
+
+<!-- Домбыра -->
+<ellipse class='o' cx='70' cy='160' rx='20' ry='26'/>\
+<line class='o' x1='70' y1='134' x2='70' y2='95'/>\
+<line class='o' x1='62' y1='95' x2='78' y2='95'/>\
+
+<!-- Жебе -->
+<line class='o' x1='140' y1='160' x2='190' y2='160'/>\
+<line class='o' x1='190' y1='160' x2='182' y2='154'/>\
+<line class='o' x1='190' y1='160' x2='182' y2='166'/>\
 </svg>");
 
     background-repeat: no-repeat, repeat;
-    background-size: auto, 210px 210px;
+    background-size: auto, 260px 260px;
     background-attachment: fixed;
 }
 
 /* ============================
-   NAV
+   НАВИГАЦИЯ
    ============================ */
+
 .nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+
     background: linear-gradient(90deg, #4FB9FF, #5CD1FF);
-    padding: 12px 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 36px;
-    box-shadow: 0 2px 10px rgba(0, 90, 130, 0.25);
+    gap: 40px;
+    padding: 10px 24px;
+    box-shadow: 0 2px 12px rgba(0, 90, 130, 0.25);
 }
 
 .nav a {
@@ -63,23 +79,24 @@ body {
     color: #004666;
 }
 
+/* Логотип QAZUP */
 .logo {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 800;
-    letter-spacing: 0.12em;
-    color: #004666 !important;
+    letter-spacing: 0.14em;
+    color: #004666;
 }
 
-/* NAV BUTTONS */
+/* Кнопки "Тест мақсаты" / "Тест туралы" */
 .goalStyle,
 .aboutStyle {
     background: #FFFFFF;
-    padding: 6px 22px;
+    padding: 7px 22px;
     border-radius: 999px;
     border: 2px solid #A6E4FF;
     color: #006C9C;
     cursor: pointer;
-    transition: .25s ease;
+    transition: 0.25s ease;
 }
 
 .goalStyle:hover,
@@ -89,50 +106,75 @@ body {
 }
 
 /* ============================
-   MAIN
+   ОСНОВНОЙ БЛОК
    ============================ */
+
 .main {
     background: #FFFFFF;
-    margin: 26px auto;
-    width: min(900px, 92%);
-    padding: 26px 28px 30px;
+    margin: 28px auto;
+    width: min(960px, 94%);
+    padding: 26px 30px 30px;
     border-radius: 18px;
-    box-shadow: 0 12px 28px rgba(0, 90, 130, 0.22);
+    box-shadow: 0 14px 32px rgba(0, 90, 130, 0.22);
     font-size: 18px;
     line-height: 1.65;
-    color: #123452;
+    color: #16324F;
+}
+
+.data {
+    display: flex;
+    justify-content: center;
 }
 
 .data p {
     width: 100%;
+    text-align: left;
+}
+
+/* Обёртка вокруг таблицы и кнопки */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 18px;
+    margin-bottom: 10px;
+}
+
+.tbl {
+    width: 100%;
 }
 
 /* ============================
-   MODALS
+   МОДАЛЫ "Тест мақсаты" / "Тест туралы"
    ============================ */
+
 .goalDiv {
     display: none;
     position: fixed;
-    z-index: 99;
-    left: 0;
+    z-index: 50;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    padding-top: 110px;
-    background: rgba(0, 60, 95, 0.45);
+    overflow: auto;
+    background: rgba(0, 0, 0, 0.45);
 }
 
 .goalDiv-content {
     background: #E7F7FF;
-    margin: auto;
-    padding: 24px 26px;
-    width: min(850px, 92%);
+    margin: 80px auto 40px;
+    padding: 22px 26px;
     border-radius: 18px;
+    width: min(860px, 94%);
+    box-shadow: 0 18px 40px rgba(0, 60, 95, 0.45);
     border: 2px solid #A9E9FF;
-    box-shadow: 0 18px 36px rgba(0, 60, 95, 0.35);
     color: #123452;
     font-size: 17px;
     line-height: 1.6;
+}
+
+.goalDiv-content p {
+    margin-top: 8px;
 }
 
 .close,
@@ -144,8 +186,48 @@ body {
     cursor: pointer;
 }
 
+.close:hover,
+.close1:hover {
+    color: #004666;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    margin: 10px 0;
+}
+
 /* ============================
-   CHECKBOX ALIGN FIX
+   ТАБЛИЦА С СӨЗДЕР
+   ============================ */
+
+table.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #76C9FF 0%, #63B1FF 40%, #4C96FF 100%);
+    box-shadow: 0 10px 26px rgba(0, 90, 130, 0.3);
+}
+
+table.styled-table tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+table.styled-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+    transition: background 0.2s ease;
+}
+
+table.styled-table td {
+    padding: 10px 14px;
+    color: #FFFFFF;
+    font-size: 17px;
+    vertical-align: middle;
+}
+
+/* ============================
+   ЧЕКБОКСЫ + СӨЗДЕР (ровно)
    ============================ */
 
 .cbx-wrapper {
@@ -153,84 +235,64 @@ body {
     align-items: center;
 }
 
-.cbx-wrapper .cbx {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+/* показываем обычный чекбокс, без странной магии */
+.cbx-wrapper .inp-cbx {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
     cursor: pointer;
+    accent-color: #FFD166; /* цвет галочки в новых браузерах */
 }
 
-.cbx-wrapper input[type="checkbox"] {
+/* подпись к чекбоксу */
+.cbx {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+/* внутри label первый span содержит SVG — прячем его, чтобы не ломал сетку */
+.cbx span:first-child {
     display: none;
 }
 
-.cbx span:first-child {
-    position: relative;
-    width: 18px;
-    height: 18px;
-    border-radius: 4px;
-    border: 1px solid #B8DFFF;
-    background: rgba(255,255,255,0.4);
-}
-
-.cbx span:first-child svg {
-    position: absolute;
-    top: 3px;
-    left: 2px;
-    stroke: #004666;
-    stroke-width: 2;
-    fill: none;
-    stroke-dasharray: 16px;
-    stroke-dashoffset: 16px;
-    transition: .25s ease;
-}
-
-.inp-cbx:checked + .cbx span:first-child {
-    background: #FFE48A;
-    border-color: #FFD268;
-}
-
-.inp-cbx:checked + .cbx span:first-child svg {
-    stroke-dashoffset: 0;
-}
-
 /* ============================
-   TABLE
+   КНОПКА "ҚАБЫЛДАУ"
    ============================ */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 16px;
-    overflow: hidden;
-    background: linear-gradient(135deg, #76C9FF, #63B1FF);
-}
 
-td {
-    padding: 10px 12px;
-    color: #FFFFFF;
-    font-size: 17px;
+.btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 6px;
 }
-
-tbody tr:hover {
-    background: rgba(255,255,255,0.12);
-}
-
-/* ============================
-   BUTTON
-   ============================ */
 
 .button {
-    background: linear-gradient(90deg, #FFE9B3, #FFD166);
-    padding: 14px 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
     border-radius: 999px;
-    font-weight: 700;
-    font-size: 16px;
-    cursor: pointer;
-    box-shadow: 0 12px 22px rgba(0,0,0,0.22);
     border: none;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #16324F;
+    background: linear-gradient(90deg, #FFE9B3 0%, #FFD166 100%);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.15s ease;
 }
 
 .button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 28px rgba(0,0,0,0.28);
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.24);
+}
+
+.button:active {
+    transform: translateY(1px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.26);
 }
