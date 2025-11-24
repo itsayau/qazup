@@ -14,9 +14,48 @@
 
 body {
     margin: 0;
-    font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Nunito', sans-serif;
+
+    /* Жұмсақ фон градиент */
+    background-image:
+        radial-gradient(circle at top left, #E0FFF6 0, #E6F3FF 40%, #DDF1FF 100%),
+
+        /* Қазақи минималист ою/иконка pattern */
+        url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'>\
+<style>.icon{stroke:%2300476b;stroke-width:3;fill:none;opacity:0.25;stroke-linecap:round;stroke-linejoin:round}</style>\
+
+<!-- Шаңырақ -->
+<circle class='icon' cx='40' cy='40' r='22'/>\
+<path class='icon' d='M22 40c5-7 11-11 18-12'/>\
+<path class='icon' d='M58 40c-5 7-11 11-18 12'/>\
+
+<!-- Қошқармүйіз элементі -->
+<path class='icon' d='M110 32c-8 0-14 6-14 14s6 14 14 14 14-6 14-14c0-4-2-8-5-11'/>\
+
+<!-- Домбыра минималист -->
+<line class='icon' x1='30' y1='110' x2='30' y2='72'/>\
+<ellipse class='icon' cx='30' cy='122' rx='14' ry='17'/>\
+<line class='icon' x1='24' y1='72' x2='36' y2='72'/>\
+
+<!-- Жебе -->
+<path class='icon' d='M90 110 L125 110'/>\
+<path class='icon' d='M125 110 L118 104'/>\
+<path class='icon' d='M125 110 L118 116'/>\
+
+</svg>");
+
+    /* Pattern repeat */
+    background-repeat: no-repeat, repeat;
+
+    /* Иконкалардың өлшемі */
+    background-size: auto, 200px 200px;
+
+    /* Фон фиксациясы */
+    background-attachment: fixed;
+
     color: #16324F;
-    background-color: #EAF6FF;
+}
 
     /* 1: жұмсақ градиент, 2: қазақи минималист иконкалар pattern */
     background-image:
@@ -342,3 +381,4 @@ tbody tr:hover {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
     filter: brightness(0.97);
 }
+
