@@ -1,63 +1,95 @@
-body {
-    margin: 0px;
-    background-image: url("tile_background.png");
+/* ===== QAZUP: Қазақи-модерн стиль ===== */
+
+/* Глобальный reset */
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* === Жалпы фон + шрифт === */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: #16324F;
+    background-color: #EAF6FF;
+
+    /* 1: жұмсақ градиент, 2: қазақи минималист иконкалар pattern */
+    background-image:
+        radial-gradient(circle at top left, #E0FFF6 0, #E6F3FF 40%, #DDF1FF 100%),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'><defs><style>.line{fill:none;stroke:%2300476b;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:0.35}</style></defs><circle class='line' cx='20' cy='20' r='10'/><path class='line' d='M14 20c2.5-3.5 5.5-5.5 9.5-6'/><path class='line' d='M26 20c-2.5 3.5-5.5 5.5-9.5 6'/><ellipse class='line' cx='55' cy='50' rx='8' ry='10'/><path class='line' d='M55 40 L55 26'/><path class='line' d='M52 26 L58 26'/><path class='line' d='M18 55c0-4 3-7 7-7 3.5 0 6 2.3 6 5.5 0 2.5-1.8 4.5-4 4.5-1.8 0-3-1.2-3-2.8 0-1.4 1-2.4 2.3-2.4'/></svg>");
+    background-repeat: no-repeat, repeat;
+    background-size: auto, 150px 150px;
+    background-attachment: fixed;
+}
+
+/* === Навигация (Тест мақсаты / Тест туралы / QAZUP) === */
 .nav {
-    background-color: #687EFF;
+    background: linear-gradient(90deg, #004C6D, #008C72);
     display: flex;
-    box-shadow: 0px 1px #0076a1b7;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 40, 60, 0.35);
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .nav a {
-    color: white;
-    padding: 14px 100px;
+    color: #FDFCF9;
     text-decoration: none;
-    font-size: 25px;
-    font-family: "Cascadia Code SemiBold", Gadget, sans-serif;
-}
-
-.goalStyle {
-    background-color: #687EFF;
-    border-radius: 10px;
-}
-
-.goalStyle:hover {
-    background-color: rgb(21, 197, 185);
-    transition: 0.8s;
-}
-
-.logo {
-    font-size: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: bold;
-    color: white !important;
-    padding: 14px 100px;
-}
-
-.aboutStyle {
-    background-color: #687EFF;
-    border-radius: 10px;
-}
-
-.aboutStyle:hover {
-    background-color: rgb(21, 197, 185);
-    transition: 0.8s;
-}
-
-.main {
-    background-color: rgb(152, 228, 255);
-    margin-left: 15%;
-    width: 70%;
-    box-shadow: 0px 20px 20px 0px #004b668e;
-    border-radius: 5PX;
-    font-family: "Cascadia Code SemiBold", Gadget, sans-serif;
-    color: rgb(57, 79, 206);
-    margin-top: 1px;
-    text-align: center;
     font-size: 18px;
+    font-weight: 600;
+    padding: 10px 28px;
+    border-radius: 999px;
+    letter-spacing: 0.03em;
+}
+
+/* Логотип QAZUP */
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    font-family: 'Nunito', system-ui, sans-serif;
+    color: #FFE9B3 !important;
+    padding: 12px 40px;
+    letter-spacing: 0.12em;
+}
+
+/* Кнопкалар: Тест мақсаты / Тест туралы */
+.goalStyle,
+.aboutStyle {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(6px);
+    transition: 0.25s ease;
+    cursor: pointer;
+}
+
+.goalStyle:hover,
+.aboutStyle:hover {
+    background: #FFE9B3;
+    color: #004C6D;
+    border-color: #FFD166;
+}
+
+/* === Негізгі блок === */
+.main {
+    background-color: #FDFEFF;
+    margin: 24px auto;
+    width: min(900px, 90%);
+    box-shadow: 0 16px 40px rgba(0, 75, 102, 0.18);
+    border-radius: 18px;
+    padding: 24px 32px 32px;
+    font-family: 'Nunito', system-ui, sans-serif;
+    color: #16324F;
+    font-size: 18px;
+    text-align: left;
+    border: 1px solid rgba(0, 140, 114, 0.06);
 }
 
 .data {
@@ -66,59 +98,66 @@ body {
     padding-top: 2%;
 }
 
+.data p {
+    width: 100%;
+    text-align: left;
+    line-height: 1.7;
+}
 
+/* === Модалдар (Тест мақсаты / Тест туралы) === */
 .goalDiv {
     display: none;
     position: fixed;
-    z-index: 1;
-    padding-top: 100px;
+    z-index: 50;
+    padding-top: 80px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.45);
 }
-
 
 .goalDiv-content {
-    background-color: rgb(104, 126, 255);
+    background: radial-gradient(circle at top, #004C6D 0, #006C84 40%, #008C72 100%);
     margin: auto;
-    padding: 20px;
-    color: white;
-    width: 80%;
-    border-radius: 8px;
-    font-family: "Cascadia Code SemiBold", Gadget, sans-serif;
+    padding: 24px 28px;
+    color: #FDFEFF;
+    width: min(800px, 92%);
+    border-radius: 18px;
+    font-family: 'Nunito', system-ui, sans-serif;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    border: 2px solid #FFD166;
 }
 
+.goalDiv-content p {
+    line-height: 1.6;
+    font-size: 17px;
+}
 
 .close,
 .close1 {
-    color: white;
+    color: #FFE9B3;
     float: right;
-    font-size: 28px;
-    font-weight: bold;
-
-
+    font-size: 30px;
+    font-weight: 700;
 }
 
 .close:hover,
 .close:focus,
 .close1:hover,
-.close:focus {
-    color: white;
+.close1:focus {
+    color: #FFFFFF;
     text-decoration: none;
     cursor: pointer;
-
 }
 
 hr {
     border: none;
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-/* content */
+/* === Контент wrapper === */
 .content {
     width: 100%;
     display: flex;
@@ -138,38 +177,30 @@ hr {
     padding-bottom: 2%;
 }
 
-/* content */
-
-/* table */
-*,
-*:before,
-*:after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* === Кесте (сөздер) === */
 table {
-    background-image: linear-gradient(#80B3FF 0, #687EFF 100%);
-    border-radius: 1em;
+    background: linear-gradient(135deg, #80B3FF 0, #687EFF 40%, #3B8F9B 100%);
+    border-radius: 16px;
     border-collapse: collapse;
-    margin: 1em;
-    width: 1000px;
+    margin: 16px auto;
+    width: 100%;
+    max-width: 1000px;
+    overflow: hidden;
 }
 
 th {
-    border-bottom: 1px solid #364043;
-    color: #E2B842;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    color: #FFE9B3;
     font-size: 0.85em;
     font-weight: 600;
-    padding: 0.5em 1em;
+    padding: 0.75em 1em;
     text-align: left;
 }
 
 td {
-    color: #fff;
+    color: #FFFFFF;
     font-weight: 400;
-    padding: 0.65em 1em;
+    padding: 0.75em 1em;
 }
 
 .disabled td {
@@ -177,18 +208,15 @@ td {
 }
 
 tbody tr {
-    transition: background 0.25s ease;
+    transition: background 0.25s ease, transform 0.1s ease;
 }
 
 tbody tr:hover {
-    background: linear-gradient(92.83deg, rgb(21, 197, 185) 0%, #31b9eb 100%);
+    background: linear-gradient(92.83deg, rgba(21, 197, 185, 0.9) 0%, rgba(49, 185, 235, 0.95) 100%);
+    transform: translateY(-1px);
 }
 
-/* table */
-
-
-
-/* checkboxes */
+/* === Checkboxes (құсбелгілер) === */
 .cbx-wrapper input[type="checkbox"] {
     display: none;
     visibility: hidden;
@@ -211,10 +239,11 @@ tbody tr:hover {
     position: relative;
     width: 18px;
     height: 18px;
-    border-radius: 3px;
+    border-radius: 4px;
     transform: scale(1);
     vertical-align: middle;
-    border: 1px solid #9098A9;
+    border: 1px solid #C4D1E3;
+    background-color: rgba(255, 255, 255, 0.12);
     transition: all 0.2s ease;
 }
 
@@ -250,20 +279,21 @@ tbody tr:hover {
 }
 
 .cbx-wrapper .cbx:hover span:first-child {
-    border-color: #506EEC;
+    border-color: #FFE9B3;
 }
 
-.cbx-wrapper .inp-cbx:checked+.cbx span:first-child {
-    background: #506EEC;
-    border-color: #506EEC;
+.cbx-wrapper .inp-cbx:checked + .cbx span:first-child {
+    background: #FFE9B3;
+    border-color: #FFD166;
     animation: wave-46 0.4s ease;
 }
 
-.cbx-wrapper .inp-cbx:checked+.cbx span:first-child svg {
+.cbx-wrapper .inp-cbx:checked + .cbx span:first-child svg {
     stroke-dashoffset: 0;
+    stroke: #004C6D;
 }
 
-.cbx-wrapper .inp-cbx:checked+.cbx span:first-child:before {
+.cbx-wrapper .inp-cbx:checked + .cbx span:first-child:before {
     transform: scale(3.5);
     opacity: 0;
     transition: all 0.6s ease;
@@ -275,117 +305,40 @@ tbody tr:hover {
     }
 }
 
-/* checkboxes */
-
-
-
-/* button */
+/* === Нәтиже батырмасы (button) === */
 .button {
     align-items: center;
     appearance: none;
-    background-clip: padding-box;
-    background-color: initial;
-    background-image: none;
     border-style: none;
     box-sizing: border-box;
-    color: #fff;
+    color: #16324F;
     cursor: pointer;
-    display: inline-block;
-    flex-direction: row;
-    flex-shrink: 0;
-    font-family: Eina01, sans-serif;
+    display: inline-flex;
+    font-family: 'Nunito', system-ui, sans-serif;
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 700;
     justify-content: center;
     line-height: 24px;
-    margin: 0;
-    min-height: 64px;
-    outline: none;
-    overflow: visible;
-    padding: 19px 26px;
-    pointer-events: auto;
+    margin: 8px 0 0;
+    min-height: 52px;
+    padding: 14px 28px;
     position: relative;
-    text-align: center;
     text-decoration: none;
     text-transform: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-    width: auto;
-    word-break: keep-all;
-    z-index: 0;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #FFE9B3 0, #FFD166 100%);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.15s ease;
 }
 
-@media (min-width: 768px) {
-    .button {
-        padding: 19px 32px;
-    }
-}
-
-.button:before,
-.button:after {
-    border-radius: 80px;
-}
-
-.button:before {
-    background-image: linear-gradient(92.83deg, rgb(21, 197, 185) 0, #31b9eb 100%);
-    content: "";
-    display: block;
-    height: 100%;
-    left: 0;
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: -2;
-}
-
-.button:after {
-    background-color: initial;
-    background-image: linear-gradient(#80B3FF 0, #687EFF 100%);
-    bottom: 4px;
-    content: "";
-    display: block;
-    left: 4px;
-    overflow: hidden;
-    position: absolute;
-    right: 4px;
-    top: 4px;
-    transition: all 100ms ease-out;
-    z-index: -1;
-}
-
-.button:hover:not(:disabled):before {
-    background: linear-gradient(92.83deg, rgb(21, 197, 185) 0%, #31b9eb 100%);
-}
-
-.button:hover:not(:disabled):after {
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    transition-timing-function: ease-in;
-    opacity: 0;
+.button:hover:not(:disabled) {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
 }
 
 .button:active:not(:disabled) {
-    color: #ccc;
+    transform: translateY(1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    filter: brightness(0.97);
 }
-
-
-
-.button:active:not(:disabled):after {
-    background-image: linear-gradient(#541a0f 0, #0c0d0d 100%);
-    bottom: 4px;
-    left: 4px;
-    right: 4px;
-    top: 4px;
-}
-
-.button:disabled {
-    cursor: default;
-    opacity: .24;
-}
-
-/* button */
