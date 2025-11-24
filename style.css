@@ -1,5 +1,5 @@
 /* ============================
-   QAZUP – Голубой Қазақи-Модерн
+   QazUp – голубой қазақи-модерн
    ============================ */
 
 /* RESET */
@@ -11,16 +11,18 @@
     box-sizing: border-box;
 }
 
-/* Шрифт */
+/* ШРИФТ */
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
 /* ============================
-   ФОН + Қазақи ою-өрнек
+   ФОН + ОЮ-ӨРНЕК ИКОНКАЛАР
    ============================ */
+
 body {
     font-family: 'Nunito', sans-serif;
-    color: #1A3A5A;
+    color: #123452;
 
+    /* 1 – голубой градиент, 2 – қазақи иконкалар */
     background-image:
         radial-gradient(circle at top, #E8F7FF 0%, #D6F1FF 45%, #CFEAFF 100%),
         url("data:image/svg+xml;utf8,\
@@ -54,43 +56,44 @@ body {
 /* ============================
    НАВИГАЦИЯ
    ============================ */
+
 .nav {
     background: linear-gradient(90deg, #4FB9FF, #5CD1FF);
-    padding: 12px 0;
+    padding: 10px 0;
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 36px;
     box-shadow: 0 2px 10px rgba(0, 90, 130, 0.25);
 }
 
 .nav a {
-    color: white;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
+    color: #004666;
 }
 
-/* ============================
-   ЛОГОТИП
-   ============================ */
+/* ЛОГО */
+
 .logo {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 800;
-    color: #004F77 !important;
+    letter-spacing: 0.12em;
+    color: #004666 !important;
 }
 
-/* ============================
-   Кнопкалар
-   ============================ */
+/* КНОПКИ В НАВЕ */
+
 .goalStyle,
 .aboutStyle {
-    background: white;
+    background: #FFFFFF;
     padding: 6px 22px;
     border-radius: 999px;
     border: 2px solid #A6E4FF;
-    transition: 0.3s ease;
-    cursor: pointer;
     color: #006C9C;
+    cursor: pointer;
+    transition: 0.25s ease;
 }
 
 .goalStyle:hover,
@@ -100,137 +103,209 @@ body {
 }
 
 /* ============================
-   Негізгі блок
+   ОСНОВНОЙ БЛОК
    ============================ */
+
 .main {
-    background: white;
-    margin: 30px auto;
+    background: #FFFFFF;
+    margin: 26px auto;
     width: min(900px, 92%);
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 90, 130, 0.18);
+    padding: 26px 28px 30px;
+    border-radius: 18px;
+    box-shadow: 0 12px 28px rgba(0, 90, 130, 0.2);
     font-size: 18px;
     line-height: 1.65;
-    color: #003E63;
+    color: #123452;
+}
+
+.data {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+}
+
+.data p {
+    width: 100%;
 }
 
 /* ============================
-   Модал (Тест мақсаты / Тест туралы)
+   МОДАЛЫ "Тест мақсаты" / "Тест туралы"
    ============================ */
+
 .goalDiv {
     display: none;
     position: fixed;
     z-index: 99;
-    padding-top: 110px;
     left: 0;
     top: 0;
-    height: 100%;
     width: 100%;
-    background-color: rgba(0, 60, 95, 0.45);
+    height: 100%;
+    padding-top: 110px;
+    background: rgba(0, 60, 95, 0.45);
 }
 
 .goalDiv-content {
     background: #E7F7FF;
     margin: auto;
-    padding: 26px 30px;
+    padding: 24px 26px;
     width: min(850px, 92%);
     border-radius: 18px;
     border: 2px solid #A9E9FF;
-    box-shadow: 0 15px 30px rgba(0, 60, 95, 0.3);
-}
-
-.goalDiv-content p {
-    font-size: 18px;
+    box-shadow: 0 18px 36px rgba(0, 60, 95, 0.35);
+    color: #123452;
+    font-size: 17px;
     line-height: 1.6;
 }
 
 .close,
 .close1 {
     float: right;
-    font-size: 32px;
+    font-size: 30px;
+    font-weight: 700;
     color: #007FB2;
     cursor: pointer;
 }
 
+hr {
+    border: none;
+    border-top: 1px solid rgba(0, 120, 170, 0.25);
+    margin: 12px 0;
+}
+
 /* ============================
-   Кесте
+   КОНТЕНТ + ТАБЛИЦА
    ============================ */
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.tbl {
+    margin: auto !important;
+}
+
+/* Таблица сөздер */
+
 table {
     width: 100%;
     border-collapse: collapse;
-    background: linear-gradient(135deg, #76C9FF, #5BA8FF);
-    border-radius: 20px;
+    border-radius: 18px;
     overflow: hidden;
+    background: linear-gradient(135deg, #76C9FF, #5BA8FF);
 }
 
-th {
-    color: #E7F7FF;
-    padding: 14px;
-    font-weight: 700;
+.styled-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.styled-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.15);
 }
 
 td {
-    padding: 14px;
-    color: white;
+    padding: 10px 12px;
+    color: #FFFFFF;
     font-size: 17px;
     vertical-align: middle;
 }
 
-/* Строка hover */
-tbody tr:hover {
-    background: rgba(255, 255, 255, 0.18);
-}
-
 /* ============================
-   Чекбокстар – РОВНО ДҰРЫС
+   ЧЕКБОКСТАР – ГАЛОЧКА + СӨЗ РОВНО
    ============================ */
-.cbx-wrapper input {
+
+.cbx-wrapper input[type="checkbox"] {
     display: none;
 }
 
 .cbx-wrapper .cbx {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 6px;
     cursor: pointer;
+    user-select: none;
 }
 
 .cbx-wrapper .cbx span:first-child {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #C9EBFF;
+    position: relative;
+    width: 18px;
+    height: 18px;
     border-radius: 4px;
-    display: inline-block;
+    border: 1px solid #C9EBFF;
+    background: rgba(255, 255, 255, 0.15);
     transition: .2s;
 }
 
-.cbx-wrapper .inp-cbx:checked + .cbx span:first-child {
-    background: #50C3FF;
-    border-color: #50C3FF;
+.cbx-wrapper .cbx span:first-child svg {
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    fill: none;
+    stroke: #FFFFFF;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: 16px;
+    transition: all 0.25s ease;
 }
 
 .cbx-wrapper .cbx span:last-child {
-    margin-left: 4px;
-    color: white;
+    margin-left: 2px;
+}
+
+/* hover border */
+.cbx-wrapper .cbx:hover span:first-child {
+    border-color: #FFFFFF;
+}
+
+/* checked state */
+.cbx-wrapper .inp-cbx:checked + .cbx span:first-child {
+    background: #FFE47A;
+    border-color: #FFE47A;
+}
+
+.cbx-wrapper .inp-cbx:checked + .cbx span:first-child svg {
+    stroke-dashoffset: 0;
+    stroke: #1F4A6B;
 }
 
 /* ============================
-   Батырма
+   БАТЫРМА
    ============================ */
+
+.btn {
+    margin: 18px auto 0;
+    text-align: center;
+}
+
 .button {
-    background: #5CCEFF;
+    border: none;
+    background: linear-gradient(90deg, #5CCEFF, #44B9FF);
     color: white;
     font-weight: 700;
-    border: none;
-    padding: 14px 30px;
+    font-size: 16px;
+    padding: 12px 30px;
     border-radius: 999px;
     cursor: pointer;
-    transition: 0.2s;
+    box-shadow: 0 10px 22px rgba(0, 90, 130, 0.25);
+    transition: 0.2s ease;
 }
 
 .button:hover {
-    background: #44C2FF;
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(0, 90, 130, 0.32);
 }
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 18px rgba(0, 90, 130, 0.3);
+}
+
+
 
 
 
