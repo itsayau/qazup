@@ -1,5 +1,5 @@
 /* ============================
-   QAZUP v2 – голубой қазақи-модерн
+   QAZUP v2 – Қазақи-модерн көк стиль
    ============================ */
 
 /* FONT */
@@ -15,36 +15,27 @@
 }
 
 /* ============================
-   BACKGROUND + ҚАЗАҚИ ОЮ-ӨРНЕК
+   BACKGROUND + ОЮ-ӨРНЕК
    ============================ */
-
 body {
     font-family: 'Nunito', sans-serif;
     color: #123452;
 
     background-image:
         radial-gradient(circle at top, #E8F7FF 0%, #D6F1FF 45%, #CFEAFF 100%),
-        url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'>\
-<style>.o{stroke:%23005B89;stroke-width:3;fill:none;opacity:0.20;stroke-linecap:round;stroke-linejoin:round}</style>\
-
-<!-- Шаңырақ -->
-<circle class='o' cx='45' cy='40' r='22'/>\
-<path class='o' d='M27 40c5-7 11-11 18-12'/>\
-<path class='o' d='M63 40c-5 7-11 11-18 12'/>\
-
-<!-- Қошқармүйіз -->
-<path class='o' d='M120 35c-9 0-16 7-16 16s7 16 16 16 16-7 16-16c0-5-3-10-6-13'/>\
-
-<!-- Домбыра -->
-<line class='o' x1='35' y1='120' x2='35' y2='78'/>\
-<ellipse class='o' cx='35' cy='132' rx='15' ry='18'/>\
-<line class='o' x1='28' y1='78' x2='42' y2='78'/>\
-
-<!-- Жебе -->
-<line class='o' x1='110' y1='120' x2='150' y2='120'/>\
-<line class='o' x1='150' y1='120' x2='142' y2='114'/>\
-<line class='o' x1='150' y1='120' x2='142' y2='126'/>\
+        url("data:image/svg+xml;utf8, \
+<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'> \
+<style>.o{stroke:%23005B89;stroke-width:3;fill:none;opacity:0.20;stroke-linecap:round;stroke-linejoin:round}</style> \
+<circle class='o' cx='45' cy='40' r='22'/> \
+<path class='o' d='M27 40c5-7 11-11 18-12'/> \
+<path class='o' d='M63 40c-5 7-11 11-18 12'/> \
+<path class='o' d='M120 35c-9 0-16 7-16 16s7 16 16 16 16-7 16-16c0-5-3-10-6-13'/> \
+<line class='o' x1='35' y1='120' x2='35' y2='78'/> \
+<ellipse class='o' cx='35' cy='132' rx='15' ry='18'/> \
+<line class='o' x1='28' y1='78' x2='42' y2='78'/> \
+<line class='o' x1='110' y1='120' x2='150' y2='120'/> \
+<line class='o' x1='150' y1='120' x2='142' y2='114'/> \
+<line class='o' x1='150' y1='120' x2='142' y2='126'/> \
 </svg>");
 
     background-repeat: no-repeat, repeat;
@@ -55,10 +46,9 @@ body {
 /* ============================
    NAV
    ============================ */
-
 .nav {
     background: linear-gradient(90deg, #4FB9FF, #5CD1FF);
-    padding: 10px 0;
+    padding: 12px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -81,7 +71,6 @@ body {
 }
 
 /* NAV BUTTONS */
-
 .goalStyle,
 .aboutStyle {
     background: #FFFFFF;
@@ -90,7 +79,7 @@ body {
     border: 2px solid #A6E4FF;
     color: #006C9C;
     cursor: pointer;
-    transition: 0.25s ease;
+    transition: .25s ease;
 }
 
 .goalStyle:hover,
@@ -100,25 +89,18 @@ body {
 }
 
 /* ============================
-   MAIN CONTENT
+   MAIN
    ============================ */
-
 .main {
     background: #FFFFFF;
     margin: 26px auto;
     width: min(900px, 92%);
     padding: 26px 28px 30px;
     border-radius: 18px;
-    box-shadow: 0 12px 28px rgba(0, 90, 130, 0.2);
+    box-shadow: 0 12px 28px rgba(0, 90, 130, 0.22);
     font-size: 18px;
     line-height: 1.65;
     color: #123452;
-}
-
-.data {
-    display: flex;
-    justify-content: center;
-    padding-top: 8px;
 }
 
 .data p {
@@ -128,7 +110,6 @@ body {
 /* ============================
    MODALS
    ============================ */
-
 .goalDiv {
     display: none;
     position: fixed;
@@ -164,34 +145,12 @@ body {
 }
 
 /* ============================
-   TABLE (WORDS)
+   CHECKBOX ALIGN FIX
    ============================ */
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 18px;
-    overflow: hidden;
-    background: linear-gradient(135deg, #76C9FF, #5BA8FF);
-}
-
-td {
-    padding: 10px 12px;
-    color: #FFFFFF;
-    font-size: 17px;
-    vertical-align: middle;
-}
-
-tbody tr:hover {
-    background: rgba(255, 255, 255, 0.15);
-}
-
-/* ============================
-   CHECKBOXES (ROVNO)
-   ============================ */
-
-.cbx-wrapper input[type="checkbox"] {
-    display: none;
+.cbx-wrapper {
+    display: flex;
+    align-items: center;
 }
 
 .cbx-wrapper .cbx {
@@ -199,69 +158,79 @@ tbody tr:hover {
     align-items: center;
     gap: 6px;
     cursor: pointer;
-    user-select: none;
 }
 
-.cbx-wrapper .cbx span:first-child {
+.cbx-wrapper input[type="checkbox"] {
+    display: none;
+}
+
+.cbx span:first-child {
     position: relative;
     width: 18px;
     height: 18px;
     border-radius: 4px;
-    border: 1px solid #C9EBFF;
-    background: rgba(255, 255, 255, 0.15);
-    transition: .2s;
+    border: 1px solid #B8DFFF;
+    background: rgba(255,255,255,0.4);
 }
 
-.cbx-wrapper .cbx span:first-child svg {
+.cbx span:first-child svg {
     position: absolute;
     top: 3px;
     left: 2px;
-    fill: none;
-    stroke: #FFFFFF;
+    stroke: #004666;
     stroke-width: 2;
+    fill: none;
     stroke-dasharray: 16px;
     stroke-dashoffset: 16px;
-    transition: all 0.25s ease;
+    transition: .25s ease;
 }
 
-.cbx-wrapper .inp-cbx:checked + .cbx span:first-child {
-    background: #FFE47A;
-    border-color: #FFE47A;
+.inp-cbx:checked + .cbx span:first-child {
+    background: #FFE48A;
+    border-color: #FFD268;
 }
 
-.cbx-wrapper .inp-cbx:checked + .cbx span:first-child svg {
+.inp-cbx:checked + .cbx span:first-child svg {
     stroke-dashoffset: 0;
-    stroke: #1F4A6B;
+}
+
+/* ============================
+   TABLE
+   ============================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 16px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #76C9FF, #63B1FF);
+}
+
+td {
+    padding: 10px 12px;
+    color: #FFFFFF;
+    font-size: 17px;
+}
+
+tbody tr:hover {
+    background: rgba(255,255,255,0.12);
 }
 
 /* ============================
    BUTTON
    ============================ */
 
-.btn {
-    margin: 18px auto 0;
-    text-align: center;
-}
-
 .button {
-    border: none;
-    background: linear-gradient(90deg, #5CCEFF, #44B9FF);
-    color: white;
+    background: linear-gradient(90deg, #FFE9B3, #FFD166);
+    padding: 14px 28px;
+    border-radius: 999px;
     font-weight: 700;
     font-size: 16px;
-    padding: 12px 30px;
-    border-radius: 999px;
     cursor: pointer;
-    box-shadow: 0 10px 22px rgba(0, 90, 130, 0.25);
-    transition: 0.2s ease;
+    box-shadow: 0 12px 22px rgba(0,0,0,0.22);
+    border: none;
 }
 
 .button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 14px 28px rgba(0, 90, 130, 0.32);
-}
-
-.button:active {
-    transform: translateY(0);
-    box-shadow: 0 8px 18px rgba(0, 90, 130, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px rgba(0,0,0,0.28);
 }
