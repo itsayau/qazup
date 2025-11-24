@@ -1,6 +1,9 @@
 /* ============================
-   QazUp – голубой қазақи-модерн
+   QAZUP v2 – голубой қазақи-модерн
    ============================ */
+
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
 
 /* RESET */
 *,
@@ -11,18 +14,14 @@
     box-sizing: border-box;
 }
 
-/* ШРИФТ */
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
-
 /* ============================
-   ФОН + ОЮ-ӨРНЕК ИКОНКАЛАР
+   BACKGROUND + ҚАЗАҚИ ОЮ-ӨРНЕК
    ============================ */
 
 body {
     font-family: 'Nunito', sans-serif;
     color: #123452;
 
-    /* 1 – голубой градиент, 2 – қазақи иконкалар */
     background-image:
         radial-gradient(circle at top, #E8F7FF 0%, #D6F1FF 45%, #CFEAFF 100%),
         url("data:image/svg+xml;utf8,\
@@ -54,7 +53,7 @@ body {
 }
 
 /* ============================
-   НАВИГАЦИЯ
+   NAV
    ============================ */
 
 .nav {
@@ -74,8 +73,6 @@ body {
     color: #004666;
 }
 
-/* ЛОГО */
-
 .logo {
     font-size: 26px;
     font-weight: 800;
@@ -83,7 +80,7 @@ body {
     color: #004666 !important;
 }
 
-/* КНОПКИ В НАВЕ */
+/* NAV BUTTONS */
 
 .goalStyle,
 .aboutStyle {
@@ -103,7 +100,7 @@ body {
 }
 
 /* ============================
-   ОСНОВНОЙ БЛОК
+   MAIN CONTENT
    ============================ */
 
 .main {
@@ -129,7 +126,7 @@ body {
 }
 
 /* ============================
-   МОДАЛЫ "Тест мақсаты" / "Тест туралы"
+   MODALS
    ============================ */
 
 .goalDiv {
@@ -166,29 +163,9 @@ body {
     cursor: pointer;
 }
 
-hr {
-    border: none;
-    border-top: 1px solid rgba(0, 120, 170, 0.25);
-    margin: 12px 0;
-}
-
 /* ============================
-   КОНТЕНТ + ТАБЛИЦА
+   TABLE (WORDS)
    ============================ */
-
-.content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-top: 16px;
-}
-
-.tbl {
-    margin: auto !important;
-}
-
-/* Таблица сөздер */
 
 table {
     width: 100%;
@@ -198,14 +175,6 @@ table {
     background: linear-gradient(135deg, #76C9FF, #5BA8FF);
 }
 
-.styled-table tbody tr {
-    transition: background 0.2s ease;
-}
-
-.styled-table tbody tr:hover {
-    background: rgba(255, 255, 255, 0.15);
-}
-
 td {
     padding: 10px 12px;
     color: #FFFFFF;
@@ -213,8 +182,12 @@ td {
     vertical-align: middle;
 }
 
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
 /* ============================
-   ЧЕКБОКСТАР – ГАЛОЧКА + СӨЗ РОВНО
+   CHECKBOXES (ROVNO)
    ============================ */
 
 .cbx-wrapper input[type="checkbox"] {
@@ -246,23 +219,11 @@ td {
     fill: none;
     stroke: #FFFFFF;
     stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
     stroke-dasharray: 16px;
     stroke-dashoffset: 16px;
     transition: all 0.25s ease;
 }
 
-.cbx-wrapper .cbx span:last-child {
-    margin-left: 2px;
-}
-
-/* hover border */
-.cbx-wrapper .cbx:hover span:first-child {
-    border-color: #FFFFFF;
-}
-
-/* checked state */
 .cbx-wrapper .inp-cbx:checked + .cbx span:first-child {
     background: #FFE47A;
     border-color: #FFE47A;
@@ -274,7 +235,7 @@ td {
 }
 
 /* ============================
-   БАТЫРМА
+   BUTTON
    ============================ */
 
 .btn {
@@ -304,8 +265,3 @@ td {
     transform: translateY(0);
     box-shadow: 0 8px 18px rgba(0, 90, 130, 0.3);
 }
-
-
-
-
-
